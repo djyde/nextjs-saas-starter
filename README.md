@@ -4,7 +4,7 @@
 
 - [x] NextAuth
 - [x] Prisma
-- [] Chakra UI
+- [ ] Chakra UI
 
 ## Usage
 
