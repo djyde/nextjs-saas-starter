@@ -7,6 +7,7 @@ WIP...
 - [x] NextAuth
 - [x] Prisma
 - [ ] Chakra UI
+- [ ] GraphQL
 
 ## Usage
 
