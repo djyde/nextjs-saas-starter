@@ -20,10 +20,10 @@ if (process.env.NODE_ENV === "production") {
 const providers = [];
 
 if (process.env.GITHUB_ID) {
-  Providers.GitHub({
+  providers.push(Providers.GitHub({
     clientId: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-  });
+  }))
 }
 
 const options = {

@@ -3,7 +3,8 @@
     "dev": "next dev",
     "db:push": "prisma db push --preview-feature",
     "db:migrate": "prisma migrate dev --preview-feature",
-    "db:generate": "prisma generate"
+    "db:generate": "prisma generate",
+    "admin": "prisma studio"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.1.4",
