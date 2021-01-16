@@ -1,3 +1,5 @@
+import { PrismaClient } from "@prisma/client";
+
 export const singleton = async <T>(id: string, fn: () => Promise<T>) => {
   if (process.env.NODE_ENV === "production") {
     return await fn()
@@ -20,3 +22,7 @@ export const singletonSync = <T>(id: string, fn: () => T) => {
     return global[id] as T;
   }
 };
+
+export const prisma = singletonSync("prisma", () => {
+  return new PrismaClient();
+});

@@ -3,7 +3,7 @@ import { ApolloServer } from "apollo-server-micro";
 import { NextApiRequest, NextApiResponse } from "next";
 import { buildSchema } from "type-graphql";
 import InitResolver from "../../gql/resolvers/InitResolver";
-import { singleton } from "../../utils";
+import { prisma, singleton } from "../../utils";
 
 export const config = {
   api: {
@@ -22,6 +22,7 @@ export default async function handler(
 
     return new ApolloServer({
       schema,
+      context: () => ({ prisma: prisma }),
     });
   });
 

@@ -2,11 +2,7 @@ import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import { PrismaClient } from "@prisma/client";
 import Adapters from "next-auth/adapters";
-import { singletonSync } from "../../../utils";
-
-const prisma = singletonSync('prisma', () => {
-  return new PrismaClient()
-})
+import { prisma, singletonSync } from "../../../utils";
 
 const providers = [];
 
@@ -21,7 +17,7 @@ const options = {
   // Configure one or more authentication providers
   providers: providers,
 
-  adapter: Adapters.Prisma.Adapter({ prisma }),
+  adapter: Adapters.Prisma.Adapter({ prisma: prisma }),
 
   callbacks: {
     session: async (session, user) => {
