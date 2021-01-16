@@ -5,6 +5,7 @@ import { buildSchema } from "type-graphql";
 import InitResolver from "../../gql/resolvers/InitResolver";
 import { Context, prisma, singleton } from "../../utils";
 import { getSession } from "next-auth/client";
+import { Container } from "typedi";
 
 export const config = {
   api: {
@@ -22,6 +23,7 @@ export default async function handler(
   const apolloServer = await singleton("apolloServer", async () => {
     const schema = await buildSchema({
       resolvers: [InitResolver],
+      container: Container
     });
 
     return new ApolloServer({
