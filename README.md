@@ -31,3 +31,19 @@ $ yarn db:generate # generate prisma client
 
 $ yarn dev
 ```
+
+### GraphQL
+
+#### Add a resolver
+
+To add a resolver, create a [TypeGraphQL resolver class](https://typegraphql.com/docs/resolvers.html) file in `gql/resolvers`. Then add this resolver to  `api/gql.ts`:
+
+```diff
+// api/gql.ts
+const schema = await buildSchema({
+  resolvers: [
+    InitResolver,
++   AnotherResolver
+  ],
+});
+```
