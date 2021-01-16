@@ -3,7 +3,8 @@ import { ApolloServer } from "apollo-server-micro";
 import { NextApiRequest, NextApiResponse } from "next";
 import { buildSchema } from "type-graphql";
 import InitResolver from "../../gql/resolvers/InitResolver";
-import { prisma, singleton } from "../../utils";
+import { Context, prisma, singleton } from "../../utils";
+import { getSession } from "next-auth/client";
 
 export const config = {
   api: {
@@ -15,6 +16,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+
+  const session = getSession({ req })
+
   const apolloServer = await singleton("apolloServer", async () => {
     const schema = await buildSchema({
       resolvers: [InitResolver],
@@ -22,7 +26,7 @@ export default async function handler(
 
     return new ApolloServer({
       schema,
-      context: () => ({ prisma: prisma }),
+      context: () => ({ prisma: prisma, session } as Context),
     });
   });
 

@@ -11,7 +11,6 @@ export const singleton = async <T>(id: string, fn: () => Promise<T>) => {
   }
 };
 
-
 export const singletonSync = <T>(id: string, fn: () => T) => {
   if (process.env.NODE_ENV === "production") {
     return fn();
@@ -26,3 +25,8 @@ export const singletonSync = <T>(id: string, fn: () => T) => {
 export const prisma = singletonSync("prisma", () => {
   return new PrismaClient();
 });
+
+export type Context = {
+  prisma: PrismaClient,
+  session?: any
+}
