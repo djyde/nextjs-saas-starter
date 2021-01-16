@@ -1,5 +1,6 @@
 import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/client'
+import { Button } from '@chakra-ui/react'
 
 function Index () {
   const [session, loading] = useSession()
@@ -7,11 +8,11 @@ function Index () {
   return <>
     {!session && <>
       Not signed in <br />
-      <button onClick={signIn}>Sign in</button>
+      <Button colorScheme="teal" onClick={signIn}>Sign in</Button>
     </>}
     {session && <>
       Signed in as {session.user.email} <br />
-      <button onClick={signOut}>Sign out</button>
+      <Button onClick={signOut}>Sign out</Button>
     </>}
   </>
 }
