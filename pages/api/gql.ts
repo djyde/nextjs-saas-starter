@@ -1,16 +1,33 @@
+import "reflect-metadata";
+import { ApolloServer } from "apollo-server-micro";
 import { NextApiRequest, NextApiResponse } from "next";
-import { apolloServer } from "../../gql";
+import { buildSchema } from "type-graphql";
+import InitResolver from "../../gql/resolvers/InitResolver";
+import { singleton } from "../../utils";
 
 export const config = {
   api: {
-    bodyParser: false
-  }
-}
+    bodyParser: false,
+  },
+};
 
-const gqlHandler = apolloServer.createHandler({
-  path: '/api/gql'
-});
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const apolloServer = await singleton("apolloServer", async () => {
+    const schema = await buildSchema({
+      resolvers: [InitResolver],
+    });
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    return new ApolloServer({
+      schema,
+    });
+  });
+
+  const gqlHandler = apolloServer.createHandler({
+    path: "/api/gql",
+  });
+
   return gqlHandler(req, res);
 }

@@ -2,20 +2,11 @@ import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import { PrismaClient } from "@prisma/client";
 import Adapters from "next-auth/adapters";
+import { singletonSync } from "../../../utils";
 
-let prisma: PrismaClient;
-
-if (process.env.NODE_ENV === "production") {
-  prisma = new PrismaClient();
-} else {
-  // @ts-expect-error
-  if (!global.prisma) {
-    // @ts-expect-error
-    global.prisma = new PrismaClient();
-  }
-  // @ts-expect-error
-  prisma = global.prisma;
-}
+const prisma = singletonSync('prisma', () => {
+  return new PrismaClient()
+})
 
 const providers = [];
 
