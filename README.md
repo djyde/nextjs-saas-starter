@@ -47,3 +47,7 @@ const schema = await buildSchema({
   ],
 });
 ```
+
+#### Add a prisma resolver
+
+https://github.com/MichalLytek/typegraphql-prisma#custom-operations
