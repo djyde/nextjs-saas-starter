@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { buildSchema } from "type-graphql";
 import InitResolver from "../../gql/resolvers/InitResolver";
 import { prisma, singleton } from "../../utils";
+import type { GqlContext } from "../../utils";
 import { getSession } from "next-auth/client";
 import { Container } from "typedi";
 
@@ -28,7 +29,7 @@ export default async function handler(
 
     return new ApolloServer({
       schema,
-      context: () => ({ prisma: prisma, session }),
+      context: () => ({ prisma: prisma, session } as GqlContext),
     });
   });
 

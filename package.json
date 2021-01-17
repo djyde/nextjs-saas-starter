@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "db:push": "prisma db push --preview-feature",
     "db:migrate": "prisma migrate dev --preview-feature",
     "db:generate": "prisma generate",

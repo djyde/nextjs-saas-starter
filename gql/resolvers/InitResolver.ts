@@ -1,13 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import { Ctx, Query, Resolver } from "type-graphql";
 import { Service } from "typedi";
-import { GqlContext } from "../../utils";
-
-// export interface GqlContext {
-//   prisma: PrismaClient;
-//   session?: any;
-// }
-
+import { User } from '@generated/type-graphql'
+import type { GqlContext } from "../../utils";
 @Service()
 @Resolver()
 export default class InitResolver {
@@ -15,5 +10,13 @@ export default class InitResolver {
   @Query(returns => String)
   sayHello(@Ctx() ctx: GqlContext) {
     return 'hello'
+  }
+
+  @Query(returns => [User])
+  async getUsers(@Ctx() ctx) {
+    const prisma = ctx.prisma as PrismaClient
+    const res = await prisma.user.findMany()
+    console.log
+    return res
   }
 }
