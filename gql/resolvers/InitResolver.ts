@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { Ctx, Query, Resolver } from "type-graphql";
-import { Service } from "typedi";
-import { User } from '@generated/type-graphql'
+import { Service } from "typedi"
+import { User } from "../../generated/type-graphql";
 import type { GqlContext } from "../../utils";
 @Service()
 @Resolver()

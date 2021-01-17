@@ -161,3 +161,4 @@ dist
 yarn.lock
 
 prisma/migrations
+generated/*
