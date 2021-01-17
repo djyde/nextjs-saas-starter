@@ -16,7 +16,6 @@ export default class InitResolver {
   async getUsers(@Ctx() ctx) {
     const prisma = ctx.prisma as PrismaClient
     const res = await prisma.user.findMany()
-    console.log
     return res
   }
 }

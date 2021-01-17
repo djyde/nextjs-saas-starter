@@ -51,3 +51,6 @@ const schema = await buildSchema({
 #### Add a prisma resolver
 
 https://github.com/MichalLytek/typegraphql-prisma#custom-operations
+
+- [Additional decorators for Prisma schema resolvers](https://github.com/MichalLytek/typegraphql-prisma#additional-decorators-for-prisma-schema-resolvers)
+- [Additional decorators for Prisma schema classes and fields](https://github.com/MichalLytek/typegraphql-prisma#additional-decorators-for-prisma-schema-classes-and-fields)
