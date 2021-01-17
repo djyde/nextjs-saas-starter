@@ -2,7 +2,7 @@ import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/client'
 import { Button } from '@chakra-ui/react'
 
-function Index () {
+function Index() {
   const [session, loading] = useSession()
 
   return <>
