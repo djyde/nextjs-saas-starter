@@ -1,20 +1,23 @@
 import React from 'react'
-import { signIn, signOut, useSession } from 'next-auth/client'
-import { Button } from '@chakra-ui/react'
+import { getSession } from 'next-auth/client'
 
-function Index() {
-  const [session, loading] = useSession()
-
-  return <>
-    {!session && <>
-      Not signed in <br />
-      <Button colorScheme="teal" onClick={signIn}>Sign in</Button>
-    </>}
-    {session && <>
-      Signed in as {session.user.email} <br />
-      <Button onClick={signOut}>Sign out</Button>
-    </>}
-  </>
+function IndexPage(props: {
+  session
+}) {
+  return (
+    <>
+      Hello, index page
+    </>
+  )
 }
 
-export default Index
+export async function getServerSideProps(ctx) {
+  const session = await getSession(ctx)
+  return {
+    props: {
+      session
+    }
+  }
+}
+
+export default IndexPage
