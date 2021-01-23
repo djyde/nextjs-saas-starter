@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import { PrismaClient } from "@prisma/client";
 import Adapters from "next-auth/adapters";
 import { prisma, singletonSync } from "../../../utils";
 

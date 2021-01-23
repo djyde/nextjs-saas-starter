@@ -1,7 +1,0 @@
-query GetUsers {
-  getUsers {
-    id,
-    name,
-    image
-  }
-}

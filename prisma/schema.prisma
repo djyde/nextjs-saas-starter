@@ -6,12 +6,6 @@ datasource db {
   url      = env("DB_URL")
 }
 
-generator typegraphql {
-  provider = "typegraphql-prisma"
-  output = "../generated/type-graphql"
-  emitTranspileCode = true
-}
-
 generator client {
   provider = "prisma-client-js"
 }
