@@ -12,12 +12,14 @@
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@prisma/client": "2.14.0",
+    "axios": "^0.21.1",
     "class-validator": "^0.13.1",
     "framer-motion": "^3.2.1",
     "next": "^10.0.5",
     "next-auth": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-query": "^3.6.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
