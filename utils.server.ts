@@ -25,8 +25,3 @@ export const singletonSync = <T>(id: string, fn: () => T) => {
 export const prisma = singletonSync("prisma", () => {
   return new PrismaClient();
 });
-
-export type GqlContext = {
-  prisma: PrismaClient
-  session?: any
-}
