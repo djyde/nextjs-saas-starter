@@ -1,8 +1,8 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import Adapters from "next-auth/adapters";
-import { prisma, singletonSync } from "../../../utils";
-import { authProviders } from "../../../config";
+import { prisma, singletonSync } from "../../../utils.server";
+import { authProviders } from "../../../config.server";
 
 const options = {
   // Configure one or more authentication providers
