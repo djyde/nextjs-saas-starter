@@ -2,19 +2,11 @@ import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
 import Adapters from "next-auth/adapters";
 import { prisma, singletonSync } from "../../../utils";
-
-const providers = [];
-
-if (process.env.GITHUB_ID) {
-  providers.push(Providers.GitHub({
-    clientId: process.env.GITHUB_ID,
-    clientSecret: process.env.GITHUB_SECRET,
-  }))
-}
+import { authProviders } from "../../../config";
 
 const options = {
   // Configure one or more authentication providers
-  providers: providers,
+  providers: authProviders,
 
   adapter: Adapters.Prisma.Adapter({ prisma: prisma }),
 
