@@ -2,8 +2,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "db:push": "prisma db push --preview-feature",
-    "db:migrate": "prisma migrate dev --preview-feature",
+    "deploy-and-build": "npm run db:deploy && npm run build",
+    "db:push": "prisma db push",
+    "db:deploy": "prisma db migrate deploy",
+    "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
     "admin": "prisma studio"
   },
