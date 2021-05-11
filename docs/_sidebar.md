@@ -1,12 +1,13 @@
-- [Introduction](README.md)
-- [Start Here](start-here.md)
+- [Introduction](/)
+- [Start Here](/start-here.md)
 - Features
-  - [Database ORM](orm.md)
-  - [Authentication](authentication.md)
-  - [API request](request.md)
-  - [Server-side utilities](server-utils.md)
-  - [Client-side utilities](client-utils.md)
+  - [UI component library](/ui.md)
+  - [Database ORM](/orm.md)
+  - [Authentication](/authentication.md)
+  - [API request](/request.md)
+  - [Server-side utilities](/server-utils.md)
+  - [Client-side utilities](/client-utils.md)
 - Guide
-  - [Deploy to Vercel](deploy-vercel.md)
+  - [Deploy to Vercel](/deploy-vercel.md)
 - References
-  - [npm scripts](npm-scripts.md)
+  - [npm scripts](/npm-scripts.md)
