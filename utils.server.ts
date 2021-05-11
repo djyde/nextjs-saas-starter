@@ -1,4 +1,6 @@
 import { PrismaClient } from "@prisma/client";
+import { UserSession } from "./pages/api/auth/[...nextauth]";
+import { getSession as nextAuthGetSession } from "next-auth/client";
 
 export const singleton = async <T>(id: string, fn: () => Promise<T>) => {
   if (process.env.NODE_ENV === "production") {
@@ -37,3 +39,7 @@ export function initMiddleware(middleware) {
       });
     });
 }
+
+export const getSession = async (req) => {
+  return (await nextAuthGetSession({ req })) as UserSession;
+};

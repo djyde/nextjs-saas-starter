@@ -4,6 +4,14 @@ import Adapters from "next-auth/adapters";
 import { prisma, singletonSync } from "../../../utils.server";
 import { authProviders } from "../../../config.server";
 
+export type UserSession = {
+  user: {
+    name: string;
+    email: string;
+  };
+  uid: string;
+};
+
 const options = {
   // Configure one or more authentication providers
   providers: authProviders,
