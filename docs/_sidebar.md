@@ -3,9 +3,10 @@
 - Features
   - [Database ORM](orm.md)
   - [Authentication](authentication.md)
-  - [Client-side request](request.md)
-  - [Server-side utilities](utilities.md)
+  - [API request](request.md)
+  - [Server-side utilities](server-utils.md)
+  - [Client-side utilities](client-utils.md)
 - Guide
-  - [Deploy to Vercel](deploy.md)
+  - [Deploy to Vercel](deploy-vercel.md)
 - References
   - [npm scripts](npm-scripts.md)
