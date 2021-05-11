@@ -8,3 +8,11 @@ Nextjs SaaS boilerplate. Includes:
 - [Client-side API request solution](/request.md)
 - (WIP) Email service
 - (WIP) Payment
+
+## Used by
+
+- [Cusdis](https://cusdis.com) A light-weight, privacy-friendly alternative to Disqus.
+
+## Contributing
+
+https://github.com/djyde/nextjs-saas-starter
