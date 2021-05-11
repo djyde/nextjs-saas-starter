@@ -1,8 +1,8 @@
 - [Introduction](README.md)
 - [Start Here](start-here.md)
 - Features
-  - [Authentication](authentication.md)
   - [Database ORM](orm.md)
+  - [Authentication](authentication.md)
   - [Client-side request](request.md)
   - [Server-side utilities](utilities.md)
 - Guide

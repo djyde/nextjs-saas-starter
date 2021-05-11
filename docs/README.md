@@ -2,8 +2,10 @@
 
 Nextjs SaaS boilerplate. Includes:
 
-- Third-party (OAuth) Authenication
-- Database ORM
+- [Database ORM](orm.md)
+- [Third-party (OAuth) Authenication](authentication.md)
 - UI component library
 - Client-side request solution
 - Nextjs server-side utilities
+- (WIP) Email service
+- (WIP) Payment
