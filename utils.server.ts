@@ -1,6 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 import { UserSession } from "./pages/api/auth/[...nextauth]";
 import { getSession as nextAuthGetSession } from "next-auth/client";
+import Boom from "@hapi/boom";
+import { NextApiRequest, NextApiResponse } from "next";
+import nc from 'next-connect'
 
 export const singleton = async <T>(id: string, fn: () => Promise<T>) => {
   if (process.env.NODE_ENV === "production") {
@@ -43,3 +46,23 @@ export function initMiddleware(middleware) {
 export const getSession = async (req) => {
   return (await nextAuthGetSession({ req })) as UserSession;
 };
+
+export const HTTPException = Boom;
+export const apiHandler = nc<NextApiRequest, NextApiResponse>({
+  onError(e, req, res, next) {
+    if (Boom.isBoom(e)) {
+      res.status(e.output.payload.statusCode);
+      res.json({
+        error: e.output.payload.error,
+        message: e.output.payload.message,
+      });
+    } else {
+      res.status(500);
+      res.json({
+        message: "Unexpected error",
+      });
+      console.error(e);
+      // unexcepted error
+    }
+  },
+});

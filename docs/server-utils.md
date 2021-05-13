@@ -40,3 +40,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 ## getSession
 
 Typed `getSession()` (next-auth).
+
+## apiHandler
+
+A pre-wrapped [next-connect](https://github.com/hoangvvo/next-connect) handler. Usually used in [API route](/api-route-middleware.md).
+
+## HTTPException
+
+A [@hapi/Boom](https://hapi.dev/module/boom/api) instance.
