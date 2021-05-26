@@ -10,7 +10,7 @@ In your api route handler, use our `apiHandler` in `utils.server.ts`. Here is th
 import { apiHandler } from '../../utils.server'
 import cors from 'cors'
 
-export default apiHandler
+export default apiHandler()
   .use(cors({
     methods: ['GET', 'POST']
   }))

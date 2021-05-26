@@ -48,7 +48,7 @@ export const getSession = async (req) => {
 };
 
 export const HTTPException = Boom;
-export const apiHandler = nc<NextApiRequest, NextApiResponse>({
+export const apiHandler = () => nc<NextApiRequest, NextApiResponse>({
   onError(e, req, res, next) {
     if (Boom.isBoom(e)) {
       res.status(e.output.payload.statusCode);
