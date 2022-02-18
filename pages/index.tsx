@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSession } from 'next-auth/client'
+import { getSession } from 'next-auth/react'
 
 function IndexPage(props: {
   session
