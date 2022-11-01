@@ -1,6 +1,6 @@
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { trpc } from '../utils.server'
+import { trpc } from '../utils.client'
 
 const queryClient = new QueryClient({
   defaultOptions: {

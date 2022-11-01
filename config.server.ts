@@ -1,5 +1,10 @@
 export const resolvedConfig = {
   port: process.env.PORT,
+  logto: {
+    appSecret: process.env.LOGTO_APPSECRET,
+    cookieSecret: process.env.LOGTO_COOKIE_SECRET,
+    appId: process.env.LOGTO_APPID
+  },
   baseUrl() {
     if (typeof window !== "undefined")
       // browser should use relative path
