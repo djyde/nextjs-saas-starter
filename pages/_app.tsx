@@ -1,5 +1,6 @@
 import { MantineProvider } from '@mantine/core'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { trpc } from '../utils.server'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -9,7 +10,7 @@ const queryClient = new QueryClient({
   }
 })
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <MantineProvider withGlobalStyles withNormalizeCSS>
@@ -18,3 +19,5 @@ export default function App({ Component, pageProps }) {
     </QueryClientProvider>
   )
 }
+
+export default trpc.withTRPC(App)

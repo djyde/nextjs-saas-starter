@@ -1,10 +1,12 @@
 import React from 'react'
+import { trpc } from '../utils.server'
 
 function IndexPage(props: {
 }) {
+  const hello = trpc.hello.useQuery()
   return (
     <>
-      Hello, index page
+      Hello, {hello.data}
     </>
   )
 }

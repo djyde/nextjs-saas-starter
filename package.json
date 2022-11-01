@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=4096 next dev",
     "build": "next build"
   },
   "dependencies": {
@@ -11,6 +11,10 @@
     "@mantine/next": "^5.6.3",
     "@prisma/client": "^3",
     "@tanstack/react-query": "^4.13.5",
+    "@trpc/client": "10.0.0-proxy-beta.26",
+    "@trpc/next": "10.0.0-proxy-beta.26",
+    "@trpc/react-query": "10.0.0-proxy-beta.26",
+    "@trpc/server": "10.0.0-proxy-beta.26",
     "axios": "^0.21.1",
     "framer-motion": "^3.2.1",
     "next": "^13.0.1",
@@ -18,7 +22,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.6.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
