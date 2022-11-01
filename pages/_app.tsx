@@ -1,5 +1,5 @@
-import { ChakraProvider } from "@chakra-ui/react"
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { MantineProvider } from '@mantine/core'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -12,9 +12,9 @@ const queryClient = new QueryClient({
 export default function App({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ChakraProvider>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
         <Component {...pageProps} />
-      </ChakraProvider>
+      </MantineProvider>
     </QueryClientProvider>
   )
 }
