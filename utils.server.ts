@@ -1,6 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { UserSession } from "./pages/api/auth/[...nextauth]";
-import { getSession as nextAuthGetSession } from "next-auth/react";
 import Boom from "@hapi/boom";
 import { NextApiRequest, NextApiResponse } from "next";
 import nc from 'next-connect'
@@ -42,10 +40,6 @@ export function initMiddleware(middleware) {
       });
     });
 }
-
-export const getSession = async (req) => {
-  return (await nextAuthGetSession({ req }));
-};
 
 export const HTTPException = Boom;
 export const apiHandler = () => nc<NextApiRequest, NextApiResponse>({

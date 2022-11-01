@@ -13,7 +13,6 @@
     "axios": "^0.21.1",
     "framer-motion": "^3.2.1",
     "next": "^12",
-    "next-auth": "^4",
     "next-connect": "^0.12",
     "prisma": "^3",
     "react": "^17",
