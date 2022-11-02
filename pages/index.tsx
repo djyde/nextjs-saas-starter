@@ -1,6 +1,5 @@
 import React from 'react'
 import { trpc } from '../utils.client'
-import { logtoClient } from '../utils.server'
 
 function IndexPage(props: {
 }) {

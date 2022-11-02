@@ -1,13 +1,14 @@
 import { LogtoContext } from "@logto/next";
 import { TRPCError, initTRPC } from "@trpc/server";
+import { Session } from "next-auth";
 
 type Context = {
-  user: LogtoContext;
+  session: Session;
 };
 const t = initTRPC.context<Context>().create();
 
 const authMiddleware = t.middleware(({ next, ctx }) => {
-  if (!ctx.user.isAuthenticated) {
+  if (!ctx.session) {
     throw new TRPCError({
       code: "UNAUTHORIZED",
     });

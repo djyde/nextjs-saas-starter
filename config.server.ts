@@ -1,5 +1,11 @@
 export const resolvedConfig = {
   port: process.env.PORT,
+  auth: {
+    github: {
+      clientId: process.env.GH_CLIENTID,
+      secret: process.env.GH_SECRET
+    }
+  },
   logto: {
     appSecret: process.env.LOGTO_APPSECRET,
     cookieSecret: process.env.LOGTO_COOKIE_SECRET,
