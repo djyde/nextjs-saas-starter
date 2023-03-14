@@ -1,8 +1,0 @@
-- [Introduction](/)
-- [Start Here](/start-here.md)
-- Features
-  - [UI component library](/ui.md)
-  - [Database ORM](/orm.md)
-  - [Authentication](/authentication.md)
-- Guide
-  - [Deploy to Vercel](/deploy-vercel.md)
