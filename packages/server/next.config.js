@@ -2,7 +2,7 @@ const { PrismaPlugin } = require('@prisma/nextjs-monorepo-workaround-plugin')
 
 module.exports = {
   experimental: {
-    appDir: true
+    // appDir: true
   },
   transpilePackages: ['@monorepo/prisma'],
   webpack: (config, { isServer }) => {
