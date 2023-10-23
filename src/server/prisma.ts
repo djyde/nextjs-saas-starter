@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 export { PrismaClient, Prisma } from '@prisma/client'
-// @ts-expect-error
+
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
 export const prisma =
