@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import type { WebhookRequiredHeaders } from 'svix';
 import type { UserJSON, WebhookEvent } from '@clerk/nextjs/server';
 import { Webhook } from 'svix';
-import { resolvedConfig } from '../../../../server/resolvedConfig';
-import { UserDAO } from '../../../../server/dao/user.dao';
+import { resolvedConfig } from '../../../server/resolvedConfig';
+import { UserDAO } from '../../../server/dao/user.dao';
 
 export default async function handler(
   req: NextApiRequestWithSvixRequiredHeaders,
