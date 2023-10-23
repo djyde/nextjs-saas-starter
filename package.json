@@ -3,6 +3,7 @@
 		"dev": "next dev"
 	},
 	"dependencies": {
+		"@clerk/nextjs": "^4.25.6",
 		"@prisma/client": "^5.4.2",
 		"@tanstack/react-query": "^4",
 		"@trpc/client": "^10.41.0",
