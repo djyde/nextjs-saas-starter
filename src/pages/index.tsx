@@ -1,7 +1,14 @@
+import { trpc } from "../utils/trpc"
+
 function Page() {
+
+  const helloQuery = trpc.hello.useQuery({
+    text: "world"
+  })
+
   return (
     <>
-      hello world
+      {helloQuery.data?.greeting}
     </>
   )
 }
